@@ -74,7 +74,7 @@ class Connect4:
 
     def isComplete(self):
         row = 0
-        for col in range(6):
+        for col in range(7):
             if self.board[row][col] == 0:
                 return False
         return True
