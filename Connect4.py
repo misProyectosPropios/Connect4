@@ -39,12 +39,15 @@ class Connect4:
         return False
     
     def play(self):
-        while not self.isFinished() and not self.isComplete():
+        while not self.isFinisehd():
             print(self)
             value = input("Input some value")
             self.drop(int(value))
 
-    def isFinished(self):
+    def isFinisehd(self):
+        return self.hasWinner() or self.isComplete()
+
+    def hasWinner(self):
             board = self.board
             rows, cols = 6, 7
 
@@ -78,6 +81,15 @@ class Connect4:
             if self.board[row][col] == 0:
                 return False
         return True
+
+    def serialize(self):
+        return {
+            "board": [
+                [cell.value if cell != 0 else 0 for cell in row]
+                for row in self.board
+            ],
+            "current_player": self.current_player.value
+        }
 
 
 if __name__ == "__main__":

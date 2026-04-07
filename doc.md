@@ -58,3 +58,7 @@ To start a game from the command line, simply run the script directly:
 ```python
 python Connect4.py
 ```
+
+# Client Server Implementation
+
+## Client
